@@ -68,7 +68,7 @@ Start the development server:
 
 npm start
 
-Open http://localhost:3000
+Open http://localhost:3000     Your site is live at https://said444-hash.github.io/hotel-react-app/
  in your browser
 
 Future Improvements
