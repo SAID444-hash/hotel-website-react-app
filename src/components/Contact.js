@@ -1,44 +1,74 @@
-function Contact(){
+import React, { useState } from "react";
 
-return(
+function Contact() {
+  const [formData, setFormData] = useState({ name: "", email: "", message: "" });
+  const [submitted, setSubmitted] = useState(false);
 
-<section id="contact" className="p-5">
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
 
-<div className="container">
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setSubmitted(true);
+    setFormData({ name: "", email: "", message: "" });
+  };
 
-<h2 className="text-center mb-4">Contact Us</h2>
+  return (
+    <section id="contact" className="py-5">
+      <div className="container">
+        <h2 className="text-center mb-4">Contact Us</h2>
 
-<form className="w-50 mx-auto">
+        {submitted && (
+          <div className="alert alert-success text-center">
+            Thank you! Your message has been sent.
+          </div>
+        )}
 
-<input
-type="text"
-className="form-control mb-3"
-placeholder="Your Name"
-/>
+        <form onSubmit={handleSubmit} className="mx-auto" style={{ maxWidth: "600px" }}>
+          <div className="mb-3">
+            <label className="form-label">Name</label>
+            <input
+              type="text"
+              className="form-control"
+              name="name"
+              value={formData.name}
+              onChange={handleChange}
+              required
+            />
+          </div>
 
-<input
-type="email"
-className="form-control mb-3"
-placeholder="Your Email"
-/>
+          <div className="mb-3">
+            <label className="form-label">Email</label>
+            <input
+              type="email"
+              className="form-control"
+              name="email"
+              value={formData.email}
+              onChange={handleChange}
+              required
+            />
+          </div>
 
-<textarea
-className="form-control mb-3"
-placeholder="Your Message"
-></textarea>
+          <div className="mb-3">
+            <label className="form-label">Message</label>
+            <textarea
+              className="form-control"
+              name="message"
+              rows="4"
+              value={formData.message}
+              onChange={handleChange}
+              required
+            ></textarea>
+          </div>
 
-<button className="btn btn-warning w-100">
-Send Message
-</button>
-
-</form>
-
-</div>
-
-</section>
-
-)
-
+          <button type="submit" className="btn btn-warning w-100">
+            Send Message
+          </button>
+        </form>
+      </div>
+    </section>
+  );
 }
 
-export default Contact
+export default Contact;
