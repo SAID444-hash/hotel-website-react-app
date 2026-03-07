@@ -1,71 +1,56 @@
 import React from "react";
 
-// Import local images
 import room1 from "../images/room1.jpg";
 import room2 from "../images/room2.jpg";
 import room3 from "../images/room3.jpg";
 
+const rooms = [
+  {
+    id: 1,
+    name: "Presidential Suite",
+    description: "Luxury room with king-size bed, sea view, and private balcony.",
+    image: room1,
+  },
+  {
+    id: 2,
+    name: "Deluxe Room",
+    description: "Comfortable room with modern amenities and city view.",
+    image: room2,
+  },
+  {
+    id: 3,
+    name: "Standard Room",
+    description: "Cozy room for a budget-friendly stay with all essentials.",
+    image: room3,
+  },
+];
+
 function Rooms() {
   return (
-    <section id="rooms" className="py-5 bg-light">
+    <section id="rooms" className="py-5">
       <div className="container">
-
-        <h2 className="text-center mb-5">Our Rooms</h2>
+        <h2 className="text-center mb-4">Our Rooms</h2>
 
         <div className="row">
+          {rooms.map((room) => (
+            <div className="col-12 col-md-6 col-lg-4 mb-4" key={room.id}>
+              <div className="card h-100">
+                <img
+                  src={room.image}
+                  className="card-img-top"
+                  alt={room.name}
+                />
 
-          {/* Deluxe Room */}
-          <div className="col-md-4 mb-4">
-            <div className="card h-100 shadow">
-              <img
-                src={room1}
-                className="card-img-top"
-                alt="Deluxe Room"
-              />
-              <div className="card-body text-center">
-                <h5 className="card-title">Deluxe Room</h5>
-                <p className="card-text">
-                  Spacious room with sea view and modern amenities.
-                </p>
+                <div className="card-body">
+                  <h5 className="card-title">{room.name}</h5>
+                  <p className="card-text">{room.description}</p>
+                </div>
+
               </div>
             </div>
-          </div>
-
-          {/* Executive Suite */}
-          <div className="col-md-4 mb-4">
-            <div className="card h-100 shadow">
-              <img
-                src={room2}
-                className="card-img-top"
-                alt="Executive Suite"
-              />
-              <div className="card-body text-center">
-                <h5 className="card-title">Executive Suite</h5>
-                <p className="card-text">
-                  Luxury suite with premium services and beautiful interior.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          {/* Presidential Suite */}
-          <div className="col-md-4 mb-4">
-            <div className="card h-100 shadow">
-              <img
-                src={room3}
-                className="card-img-top"
-                alt="Presidential Suite"
-              />
-              <div className="card-body text-center">
-                <h5 className="card-title">Presidential Suite</h5>
-                <p className="card-text">
-                  The most luxurious suite with premium comfort and services.
-                </p>
-              </div>
-            </div>
-          </div>
-
+          ))}
         </div>
+
       </div>
     </section>
   );

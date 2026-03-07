@@ -119,12 +119,19 @@ npm start
 ## Screenshots
 
 ### Home Page
-![Home Page](src/images/screenshots/home.png)
+<img width="1832" height="325" alt="home png" src="https://github.com/user-attachments/assets/cdae7d40-0b8f-48db-be9d-a40a78064048" />
 
 ### Rooms Section
 
 <img width="1835" height="700" alt="rooms png" src="https://github.com/user-attachments/assets/866a3ad6-fb55-45a7-a765-da87377b9df8" />
 
+### About page
+
+<img width="1455" height="237" alt="about png" src="https://github.com/user-attachments/assets/7f2f7401-b8a5-4cb4-834d-50f46dacc262" />
+
+### Contact page
+
+<img width="1086" height="486" alt="contact png" src="https://github.com/user-attachments/assets/7f559403-1a4d-4257-98e9-fcbb7e071939" />
 
 ### Booking Page
 

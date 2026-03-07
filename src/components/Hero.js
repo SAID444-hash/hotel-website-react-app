@@ -1,20 +1,23 @@
+import React from "react";
+import heroImg from "../images/hero.jpg"; // place your hero image in src/images
+
 function Hero() {
-
   return (
-    <section id="home" className="bg-dark text-white text-center p-5">
-      <div className="container">
-        <h1 className="display-4">Experience Comfort & Luxury</h1>
-        <p className="lead">Book your stay with us today</p>
-
-        {/* Remove this button */}
-        {/* 
-        <button
-          className="btn btn-warning btn-lg"
-          onClick={() => alert("You have booked successfully!")}
-        >
-          Book Now
-        </button> 
-        */}
+    <section
+      id="home"
+      className="hero d-flex align-items-center justify-content-center"
+      style={{
+        backgroundImage: `url(${heroImg})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        height: "80vh",
+        color: "#fff",
+        textAlign: "center",
+      }}
+    >
+      <div>
+        <h1>Welcome to Luxury Stay Hotel</h1>
+        <p>Experience comfort and luxury like never before</p>
       </div>
     </section>
   );
