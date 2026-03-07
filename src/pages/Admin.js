@@ -1,42 +1,66 @@
-import React from "react";
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 function Admin() {
-  return (
-    <div className="container py-5">
-      <h2>Admin Dashboard</h2>
-      <p>Manage rooms, bookings, and users here.</p>
+  const [adminData, setAdminData] = useState({
+    username: "",
+    password: "",
+  });
+  const [loggedIn, setLoggedIn] = useState(false);
 
-      {/* Example admin table */}
-      <table className="table table-striped mt-4">
-        <thead>
-          <tr>
-            <th>Room Name</th>
-            <th>Status</th>
-            <th>Price</th>
-            <th>Actions</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Deluxe Room</td>
-            <td>Available</td>
-            <td>$120</td>
-            <td><button className="btn btn-sm btn-primary">Edit</button></td>
-          </tr>
-          <tr>
-            <td>Executive Suite</td>
-            <td>Booked</td>
-            <td>$200</td>
-            <td><button className="btn btn-sm btn-primary">Edit</button></td>
-          </tr>
-          <tr>
-            <td>Presidential Suite</td>
-            <td>Available</td>
-            <td>$350</td>
-            <td><button className="btn btn-sm btn-primary">Edit</button></td>
-          </tr>
-        </tbody>
-      </table>
+  const handleChange = (e) => {
+    setAdminData({ ...adminData, [e.target.name]: e.target.value });
+  };
+
+  const handleLogin = (e) => {
+    e.preventDefault();
+    setLoggedIn(true);
+    setAdminData({ username: "", password: "" });
+  };
+
+  return (
+    <div className="container mt-4">
+
+      {/* Back to Home Button */}
+      <Link to="/" className="btn btn-primary mb-3">
+        ← Back to Home
+      </Link>
+
+      <h2>Admin Login</h2>
+
+      {loggedIn && (
+        <div className="alert alert-success">You are logged in successfully!</div>
+      )}
+
+      <form onSubmit={handleLogin} className="mt-3">
+        <div className="mb-3">
+          <label className="form-label">Username</label>
+          <input
+            type="text"
+            className="form-control"
+            name="username"
+            value={adminData.username}
+            onChange={handleChange}
+            required
+          />
+        </div>
+
+        <div className="mb-3">
+          <label className="form-label">Password</label>
+          <input
+            type="password"
+            className="form-control"
+            name="password"
+            value={adminData.password}
+            onChange={handleChange}
+            required
+          />
+        </div>
+
+        <button type="submit" className="btn btn-warning">
+          Login
+        </button>
+      </form>
     </div>
   );
 }

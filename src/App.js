@@ -1,24 +1,33 @@
+// src/App.js
 import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
+// Components
 import Navbar from "./components/Navbar";
-import Footer from "./components/Footer";
+import HomeButton from "./components/HomeButton";
 
+// Pages
 import Home from "./pages/Home";
 import Booking from "./pages/Booking";
 import Admin from "./pages/Admin";
 
 function App() {
   return (
-    <Router>
+    <BrowserRouter>
+      {/* Navbar visible on all pages */}
       <Navbar />
+
+      {/* Routes */}
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/booking" element={<Booking />} />
         <Route path="/admin" element={<Admin />} />
+        {/* Add other pages if needed */}
       </Routes>
-      <Footer />
-    </Router>
+
+      {/* Floating Home Button */}
+      <HomeButton />
+    </BrowserRouter>
   );
 }
 
