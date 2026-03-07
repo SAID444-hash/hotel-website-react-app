@@ -2,21 +2,38 @@ function Contact(){
 
 return(
 
-<section className="contact" id="contact">
+<section id="contact" className="p-5">
 
-<h2>Contact Us</h2>
+<div className="container">
 
-<form>
+<h2 className="text-center mb-4">Contact Us</h2>
 
-<input type="text" placeholder="Your Name" required />
+<form className="w-50 mx-auto">
 
-<input type="email" placeholder="Your Email" required />
+<input
+type="text"
+className="form-control mb-3"
+placeholder="Your Name"
+/>
 
-<textarea placeholder="Your Message"></textarea>
+<input
+type="email"
+className="form-control mb-3"
+placeholder="Your Email"
+/>
 
-<button type="submit">Send Message</button>
+<textarea
+className="form-control mb-3"
+placeholder="Your Message"
+></textarea>
+
+<button className="btn btn-warning w-100">
+Send Message
+</button>
 
 </form>
+
+</div>
 
 </section>
 

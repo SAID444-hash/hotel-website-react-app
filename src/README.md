@@ -1,4 +1,4 @@
- Luxury Stay Hotel - React Version
+# Luxury Stay Hotel - React Version
 
 ## Project Description
 Luxury Stay Hotel is a responsive hotel website built with **React**.  
@@ -7,8 +7,7 @@ The website showcases hotel rooms, provides hotel information, includes a contac
 This React version demonstrates how to structure a project using **components**, **props**, **local images**, and **event handling**.
 
 ---
-
-## Features
+![alt text](luxury.png-1.jpeg)
 - Responsive navigation bar with smooth scrolling
 - Hero section with hotel background image
 - Rooms section displaying Deluxe, Executive, and Presidential Suites
@@ -89,4 +88,4 @@ Developed by: HASSAN M SAID
 
 License
 
-This project is for educational purposes
+This project is for educational purposes.

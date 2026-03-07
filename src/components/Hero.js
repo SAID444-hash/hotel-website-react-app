@@ -1,23 +1,23 @@
-function Hero(){
+function Hero() {
 
-function bookRoom(){
-alert("You have booked successfully!")
+  return (
+    <section id="home" className="bg-dark text-white text-center p-5">
+      <div className="container">
+        <h1 className="display-4">Experience Comfort & Luxury</h1>
+        <p className="lead">Book your stay with us today</p>
+
+        {/* Remove this button */}
+        {/* 
+        <button
+          className="btn btn-warning btn-lg"
+          onClick={() => alert("You have booked successfully!")}
+        >
+          Book Now
+        </button> 
+        */}
+      </div>
+    </section>
+  );
 }
 
-return(
-
-<section className="hero" id="home">
-
-<h2>Experience Comfort & Luxury</h2>
-
-<p>Book your stay with us today</p>
-
-<button onClick={bookRoom}>Book Now</button>
-
-</section>
-
-)
-
-}
-
-export default Hero
+export default Hero;

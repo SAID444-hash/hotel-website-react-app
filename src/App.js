@@ -1,27 +1,28 @@
-import './style.css'
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
-import Navbar from './components/Navbar'
-import Hero from './components/Hero'
-import Rooms from './components/Rooms'
-import About from './components/About'
-import Contact from './components/Contact'
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
+
+// Pages
+import Home from "./pages/Home";
+import Admin from "./pages/Admin";
+import Booking from "./pages/Booking";
 
 function App() {
   return (
-    <div>
-
+    <Router>
       <Navbar />
 
-      <Hero />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/admin" element={<Admin />} />
+        <Route path="/booking" element={<Booking />} />
+      </Routes>
 
-      <Rooms />
-
-      <About />
-
-      <Contact />
-
-    </div>
-  )
+      <Footer />
+    </Router>
+  );
 }
 
-export default App
+export default App;
