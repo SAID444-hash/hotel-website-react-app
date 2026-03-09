@@ -140,7 +140,8 @@ npm start
 
 
 ### Admin Page
-<img width="1841" height="729" alt="admin png" src="https://github.com/user-attachments/assets/65b835e8-8345-42a0-9b8d-276e371e84ec" />
+<img width="1714" height="705" alt="admin" src="https://github.com/user-attachments/assets/0ff9d597-9e40-4b61-b5cc-06f7254119b7" />
+
 
 
 ---
